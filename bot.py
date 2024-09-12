@@ -27,7 +27,7 @@ if cfg.SESSION_STRING:
 else:
     user = None
 
-gif = []
+gif = [ 'https://envs.sh/Psx.jpg' ]
 
 
 async def send_approval_message(user_id: int, user_mention: str, chat: Chat, client: Client):
@@ -68,7 +68,7 @@ async def op(_, m :Message):
             ]
         )
         add_user(m.from_user.id)
-        await m.reply_photo("", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By Hanuman Predictions**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+        await m.reply_photo("https://envs.sh/Psx.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By Hanuman Predictions**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
 
     elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
         keyboar = InlineKeyboardMarkup(
