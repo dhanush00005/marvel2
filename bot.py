@@ -27,19 +27,7 @@ if cfg.SESSION_STRING:
 else:
     user = None
 
-gif = [
-    'https://te.legra.ph/file/a1b3d4a7b5fce249902f7.mp4',
-    'https://te.legra.ph/file/0c855143a4039108df602.mp4',
-    'https://te.legra.ph/file/d7f3f18a92e6f7add8fcd.mp4',
-    'https://te.legra.ph/file/9e334112ee3a4000c4164.mp4',
-    'https://te.legra.ph/file/652fc39ae6295272699c6.mp4',
-    'https://te.legra.ph/file/702ca8761c3fd9c1b91e8.mp4',
-    'https://te.legra.ph/file/a1b3d4a7b5fce249902f7.mp4',
-    'https://te.legra.ph/file/d7f3f18a92e6f7add8fcd.mp4',
-    'https://te.legra.ph/file/0c855143a4039108df602.mp4',
-    'https://te.legra.ph/file/9e334112ee3a4000c4164.mp4',
-    'https://te.legra.ph/file/702ca8761c3fd9c1b91e8.mp4'
-]
+gif = []
 
 
 async def send_approval_message(user_id: int, user_mention: str, chat: Chat, client: Client):
@@ -47,7 +35,7 @@ async def send_approval_message(user_id: int, user_mention: str, chat: Chat, cli
         try:
             await app.send_video(user_id,
                                 random.choice(gif),
-                                f"**Hello {user_mention}!\nWelcome To {chat.title}\n\n__Powerd By : @VJ_Botz __**")
+                                f"**Hello {user_mention}!\nWelcome To {chat.title}\n\n__Powerd By Hanuman Predictions**")
         except:
             pass
         await client.approve_chat_join_request(chat.id, user_id)
@@ -75,21 +63,18 @@ async def op(_, m :Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🗯 Channel", url="https://t.me/vj_botz"),
-                    InlineKeyboardButton("💬 Support", url="https://t.me/vj_bot_disscussion")
-                ],[
                     InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/vjmasterblastbot?startgroup")
                 ]
             ]
         )
         add_user(m.from_user.id)
-        await m.reply_photo("https://graph.org/file/d57d6f83abb6b8d0efb02.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @VJ_Botz __**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+        await m.reply_photo("h", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @VJ_Botz __**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
 
     elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
         keyboar = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/vjmasterblastbot?startgroup")
+                    InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/?startgroup")
                 ]
             ]
         )
@@ -126,9 +111,6 @@ async def chk(_, cb : CallbackQuery):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🗯 Channel", url="https://t.me/VJ_Botz"),
-                    InlineKeyboardButton("💬 Support", url="https://t.me/vj_bot_disscussion")
-                ],[
                     InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/vjmasterblastbot?startgroup")
                 ]
             ]
